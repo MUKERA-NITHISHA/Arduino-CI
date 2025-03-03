@@ -16,7 +16,7 @@ pipeline {
 
         stage('Compile Sketch') {
             steps {
-                sh 'arduino-cli compile --fqbn arduino:avr:uno smart_light.ino'
+                sh 'arduino-cli compile --fqbn arduino:avr:uno Blink.ino'
             }
         }
 
