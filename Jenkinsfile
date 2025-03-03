@@ -15,14 +15,14 @@ pipeline {
         
         stage('Compile Sketch') {
             steps {
-                // Use the ARDUINO_CLI_PATH environment variable to run arduino-cli
-                bat '"${ARDUINO_CLI_PATH}" compile --fqbn arduino:avr:uno Blink.ino'
+                // Correct Windows batch command syntax for environment variable
+                bat "%ARDUINO_CLI_PATH% compile --fqbn arduino:avr:uno Blink.ino"
             }
         }
 
         stage('Build Successful') {
             steps {
-                echo 'Build completed successfully!'
+                echo '✅ Build completed successfully!'
             }
         }
     }
